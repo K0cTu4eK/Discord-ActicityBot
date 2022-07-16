@@ -19,6 +19,6 @@ Before using it for the first time, open **config.ini** and configure the bot.
 
 В программе всего одна команда - time. При вызове она отсылает embed со временем каждой игры и в конце указывается общее время.
 
-Перед первым использованием - откройте config.ini и настройте бота.
+Перед первым использованием - откройте **config.ini** и настройте бота.
 
 ![embed](https://user-images.githubusercontent.com/98667549/179357590-c8e853e9-a185-4c69-b28d-b3b613ede911.png)
