@@ -49,7 +49,12 @@ async def on_ready():
 async def db_update():
     activity = bot.get_guild(guild).get_member(user).activity
     if activity:
-        activity = str(activity)
+        try:
+            activity = activity.name
+            print(1, activity)
+        except:
+            activity = str(activity)
+            print(2, activity)
         start_time = round(time.time())
         game_lst = []
         for game in cursor.execute(f"SELECT game FROM activity").fetchall():
@@ -61,7 +66,10 @@ async def db_update():
         last_activity = activity
         last_seconds = cursor.execute(f"SELECT seconds FROM activity where game = '{last_activity}'").fetchone()[0]
         while True:
-            activity = str(bot.get_guild(guild).get_member(user).activity)
+            try:
+                activity = bot.get_guild(guild).get_member(user).activity.name
+            except:
+                activity = str(bot.get_guild(guild).get_member(user).activity)
             if last_activity != activity:
                 break
             sec = round(time.time() - start_time)
