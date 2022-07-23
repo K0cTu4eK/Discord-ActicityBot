@@ -51,10 +51,8 @@ async def db_update():
     if activity:
         try:
             activity = activity.name
-            print(1, activity)
         except:
             activity = str(activity)
-            print(2, activity)
         start_time = round(time.time())
         game_lst = []
         for game in cursor.execute(f"SELECT game FROM activity").fetchall():
