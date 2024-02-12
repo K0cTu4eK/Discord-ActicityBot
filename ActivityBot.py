@@ -5,6 +5,7 @@ import time
 import asyncio
 from discord.ext import commands, tasks
 
+
 # ------------- объекты конфигпарсера -----------------
 config = configparser.ConfigParser()
 config.read("config.ini", encoding='utf-8')
